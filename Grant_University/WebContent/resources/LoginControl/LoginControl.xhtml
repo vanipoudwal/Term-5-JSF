@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:composite="http://xmlns.jcp.org/jsf/composite"
+      xmlns:lc="http://java.sun.com/jsf/composite/LoginControl">
+
+	<h:head>
+		<h:title>Grant University</h:title>
+		<link href="./resources/ExternalStyleSheet.css" rel="stylesheet" type="text/css" />
+	</h:head>
+
+	<h:body>
+		<composite:interface>
+			<composite:attribute name="Username" default="" />
+			<composite:attribute name="Password" default="Password" />
+			<composite:attribute name="submitValue" default="Submit" />
+			<composite:attribute name="resetValue" default="Reset" />
+			<composite:valueholder name=id />
+			<composite:valueholder name="Password" />
+		</composite:interface>
+		
+		<composite:implementation>
+			<br/><br/><br/><br/>
+				<table cellspacing="0.5" border="1" align="center" width="100%" bgcolor="FFFFFF">
+					<tr>
+						<td bgcolor="#000080" align="center"><p style="color: #ffffff">Account Login</p></td>
+					</tr>
+					<tr>
+						<td bgcolor="#000080">
+							<table border="0" align="center" width="100%">
+								<h:form>
+									<tr>
+										<td align="left">
+											<p style="color:#ffffff">Id:</p>
+										</td>
+										<td align="left">
+											<h:inputText size="8" id="id" value="#{cc.attrs.Username}" />
+										</td>
+									</tr>
+									<tr>
+										<td align="left">
+											<p style="color:#ffffff">Password:</p>
+										</td>
+										<td align="left">
+											<h:inputText size="10" id="pass" value="#{cc.attrs.Password}" />
+										</td>
+									</tr>
+									<tr>
+										<td align="center">
+											<h:commandButton value="#{cc.attrs.submitValue}" action="#{bean.Action}" styleClass="button" />
+										</td>
+										<td align="center">
+											<h:commandButton value="#{cc.attrs.resetValue}" type="reset" styleClass="button" />
+										</td>
+									</tr>
+								</h:form>
+							</table>
+						</td>
+					</tr>
+				</table>
+		</composite:implementation>
+	</h:body>
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"
+    version="2.3">
+    
+    <managed-bean>
+        <managed-bean-name>Gateway</managed-bean-name>
+        <managed-bean-class>com.Payment.Gateway</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    
+    <navigation-rule>
+        <from-view-id>index.xhtml</from-view-id>
+        	<navigation-case>
+        	    <if>#{Gateway.DebitCard}</if>
+        	    <to-view-id>DebitCard.xhtml</to-view-id>
+        	</navigation-case>
+    
+        	<navigation-case>
+        	    <if>#{Gateway.CreditCard}</if>
+        	    <to-view-id>CreditCard.xhtml</to-view-id>
+        	</navigation-case>
+
+        	<navigation-case>
+        	    <if>#{Gateway.Wallet}</if>
+        	    <to-view-id>Wallet.xhtml</to-view-id>
+        	</navigation-case>
+
+        	<navigation-case>
+        	    <if>#{Gateway.UPI}</if>
+        	    <to-view-id>UPI.xhtml</to-view-id>
+        	</navigation-case>
+        	
+    </navigation-rule>
+    
+</faces-config>

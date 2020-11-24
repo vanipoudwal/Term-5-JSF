@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/core"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+	<h:head>
+		<title>..Payment..</title>
+	</h:head>
+
+	<h:body>
+		<center><b><i><u>Payment Gateway !!</u></i></b></center>
+		<br/><br/>
+			<h:form>
+				<center>Type of Card: <h:selectOneRadio id="Mode_Of_Payment" value="#{Mode_Of_Payment}"><br/>
+								<f:selectItem itemLabel="Rupay" itemValue="Rupay"/>
+								<f:selectItem itemLabel="MasterCard" itemValue="MasterCard"/>
+								<f:selectItem itemLabel="VISA" itemValue="VISA"/>
+								<f:selectItem itemLabel="Discover" itemValue="Discover"/>
+							</h:selectOneRadio></center><br/>
+				<center>Enter the Credit Card Number: <h:inputText size="20" id="Card_No" value="#{Card_No}"/><br/><br/>
+						Enter the Card Holder Name: <h:inputText size="20" id="CardHolderName" value="#{CardHolderName}"/><br/><br/>
+						Enter the CVV: <h:inputText size="20" id="CVV" value="#{CVV}"/><br/><br/>
+						Enter the PIN: <h:inputText size="20" id="PIN" value="#{PIN}"/><br/><br/>
+						Enter the Expiry Date: <h:inputText size="20" id="Expiry_Date" value="#{Expiry_Date}"/><br/><br/>
+						<h:commandButton value="Proceed" style="margin:10pt" action="Proceed.xhtml"/><br/><br/>
+				</center>
+			</h:form>
+	</h:body>
+</html>

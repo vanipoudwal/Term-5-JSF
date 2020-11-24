@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+          
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:feedback="http://java.sun.com/jsf/composite/feedback"
+	xmlns:composite="http://xmlns.jcp.org/jsf/composite">
+      
+	<composite:interface>
+		<composite:attribute name="FeedbackLabel" />
+		<composite:attribute name="FeedbackValue" />
+		<composite:attribute name="commandButtonLabel" />
+		<composite:attribute name="commandButtonAction"
+			method-signature="java.lang.String submitAction()"/>
+	</composite:interface>
+	
+	<composite:implementation>
+		<h:form>
+			<h:panelGrid columns="2" id="submitForm">
+				#{cc.attrs.FeedbackLabel}
+					<h:inputTextarea value="#{cc.attrs.FeedbackValue}" name="Feedback" />
+					
+				<h:commandButton value="#{cc.attrs.commandButtonLabel}"
+									action="#{cc.attrs.commandButtonAction}" />
+			</h:panelGrid>
+		</h:form>
+	</composite:implementation>
+</html>

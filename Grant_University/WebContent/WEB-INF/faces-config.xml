@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"
+    version="2.3">
+
+    <!-- Configuration for Home page -->
+    <navigation-rule>
+        <from-view-id>/Home.xhtml</from-view-id>
+        	<navigation-case>
+        	    <from-action>#{bean.Action}</from-action>
+        	    <from-outcome>Success</from-outcome>
+        	    <to-view-id>/Success.xhtml</to-view-id>
+        	</navigation-case>
+        	<navigation-case>
+        	    <from-action>#{bean.Action}</from-action>
+        	    <from-outcome>Error</from-outcome>
+        	    <to-view-id>/LoginError.xhtml</to-view-id>
+        	</navigation-case>
+    </navigation-rule>
+    
+    <!-- Configuration for About Us page -->
+    <navigation-rule>
+        <from-view-id>/AboutUs.xhtml</from-view-id>
+        	<navigation-case>
+        	    <from-action>#{bean.Action}</from-action>
+        	    <from-outcome>Success</from-outcome>
+        	    <to-view-id>/Success.xhtml</to-view-id>
+        	</navigation-case>
+        	<navigation-case>
+        	    <from-action>#{bean.Action}</from-action>
+        	    <from-outcome>Error</from-outcome>
+        	    <to-view-id>/LoginError.xhtml</to-view-id>
+        	</navigation-case>
+    </navigation-rule>
+    
+    <!-- Configuration for Admissions page -->
+    <navigation-rule>
+        <from-view-id>/Admissions.xhtml</from-view-id>
+        	<navigation-case>
+        	    <from-action>#{bean.Action}</from-action>
+        	    <from-outcome>Success</from-outcome>
+        	    <to-view-id>/Success.xhtml</to-view-id>
+        	</navigation-case>
+        	<navigation-case>
+        	    <from-action>#{bean.Action}</from-action>
+        	    <from-outcome>Error</from-outcome>
+        	    <to-view-id>/LoginError.xhtml</to-view-id>
+        	</navigation-case>
+    </navigation-rule>
+    
+    <!-- Configuration for Contact Us page -->
+    <navigation-rule>
+        <from-view-id>/ContactUs.xhtml</from-view-id>
+        	<navigation-case>
+        	    <from-action>#{bean.Action}</from-action>
+        	    <from-outcome>Success</from-outcome>
+        	    <to-view-id>/Success.xhtml</to-view-id>
+        	</navigation-case>
+        	<navigation-case>
+        	    <from-action>#{bean.Action}</from-action>
+        	    <from-outcome>Error</from-outcome>
+        	    <to-view-id>/LoginError.xhtml</to-view-id>
+        	</navigation-case>
+    </navigation-rule>
+    
+    <!-- Configuration for Registration page -->
+    <navigation-rule>
+        <from-view-id>/Registration.xhtml</from-view-id>
+        	<navigation-case>
+        	    <from-action>#{bean.Action}</from-action>
+        	    <from-outcome>Success</from-outcome>
+        	    <to-view-id>/Success.xhtml</to-view-id>
+        	</navigation-case>
+        	<navigation-case>
+        	    <from-action>#{bean.Action}</from-action>
+        	    <from-outcome>Error</from-outcome>
+        	    <to-view-id>/LoginError.xhtml</to-view-id>
+        	</navigation-case>
+    </navigation-rule>
+    
+    <!-- Configuration for Login Error page -->
+    <navigation-rule>
+        <from-view-id>/LoginError.xhtml</from-view-id>
+        	<navigation-case>
+        	    <from-action>#{bean.Action}</from-action>
+        	    <from-outcome>Success</from-outcome>
+        	    <to-view-id>/Success.xhtml</to-view-id>
+        	</navigation-case>
+        	<navigation-case>
+        	    <from-action>#{bean.Action}</from-action>
+        	    <from-outcome>Error</from-outcome>
+        	    <to-view-id>/LoginError.xhtml</to-view-id>
+        	</navigation-case>
+    </navigation-rule>
+    
+</faces-config>

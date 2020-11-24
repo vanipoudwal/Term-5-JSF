@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+	<h:head>
+		<h:title>JSF Employment Application</h:title>
+	</h:head>
+
+	<h:body>
+		<br/>
+		<h1 align="center">Welcome Employee Action Portal !!</h1>
+		<br/>
+			<table border="0" width="50%" align="center">
+				<h:form>
+					<tr>
+						<td align="center">
+							<b>Employee ID</b>
+						</td>
+						<td><br/>
+							<b>:</b>
+						</td>
+						<td align="center">
+							<h:selectOneMenu id="EmpID" value="#{Employee.EmpID}">
+								<f:selectItem itemValue="" itemLabel=""/>
+								<f:selectItem itemValue="EMP001" itemLabel="EMP001"/>
+								<f:selectItem itemValue="EMP002" itemLabel="EMP002"/>
+								<f:selectItem itemValue="EMP003" itemLabel="EMP003"/>
+								<f:selectItem itemValue="EMP004" itemLabel="EMP004"/>
+								<f:selectItem itemValue="EMP005" itemLabel="EMP005"/>
+							</h:selectOneMenu>
+							<h:commandButton id="commandButton" action="EmployeeAction" value="Find Employee" actionListener="#{Employee.AutoFill}"/>
+							<h:commandButton id="commandButton" action="EmployeeAction" value="Find Employee">
+								<f:actionListener type="Employment.EmployeeActionListener"/>
+							</h:commandButton>
+						</td>
+					</tr>
+						<br/><br/>
+					<tr>
+						<td align="center"><br/>
+							<b>Name</b>
+						</td>
+						<td><br/>
+							<b>:</b>
+						</td>
+						<td align="center"><br/>
+							<h:outputText id="Name" value="#{Employee.Name}"/>
+						</td>
+					</tr>
+					<tr>
+						<td align="center"><br/>
+							<b>Address</b>
+						</td>
+						<td><br/>
+							<b>:</b>
+						</td>
+						<td align="center"><br/>
+							<h:outputText id="Address" value="#{Employee.Address}"/>
+						</td>
+					</tr>
+					<tr>
+						<td align="center"><br/>
+							<b>Department</b>
+						</td>
+						<td><br/>
+							<b>:</b>
+						</td>
+						<td align="center"><br/>
+							<h:outputText id="Deptt" value="#{Employee.Deptt}"/>
+						</td>
+					</tr>
+				</h:form>
+			</table>
+	</h:body>
+</html>

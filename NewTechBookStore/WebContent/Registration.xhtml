@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+          
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+	<h:head>
+		<style>
+			table, tr
+			{
+				border: 1px solid white;
+			}
+		</style>	
+	</h:head>
+	
+	<h:title>New Tech Book Store</h:title>
+	
+	<h:body>
+		<table border="0" bgcolor="purple" align="center" width="100%" style="position: relative; height: 100px">
+			<tr>
+				<td bgcolor="green" align="center">
+					<p style="font-size: 38pt; color: #ffffff; font-family: Arial Rounded MT Bold">NEW TECH BOOK STORE</p>
+				</td>
+				<td bgcolor="green" align="left" width="180">
+					<h:graphicImage url="/Images/books.jpg" width="180" height="160" align="right"/>
+				</td>
+			</tr>
+		</table>
+		<table bgcolor="white" border="1" align="center" width="100%" style="height:470px">
+			<tr>
+				<td bgcolor="grey" width="20%" valign="top" align="center">
+					<br/><br/>
+					<h:form>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="Home" value="Home"/>
+						<br/><br/>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="AboutUs" value="About Us"/>
+						<br/><br/>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="Registration" value="Registration"/>
+						<br/><br/>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="ContactUs" value="Contact Us"/>
+						<br/><br/>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="BookInfo" value="Book Information"/>
+						<br/><br/><br/><br/>
+						
+						<table cellspacing="0.5" border="1" align="center" width="100%" bgcolor="FFFFFF">
+							<tr>
+								<td bgcolor="green">
+									<p style="font-size: 14pt; color: #ffffff">ACCOUNT LOGIN !!</p>
+								</td>
+							</tr>
+							<tr>
+								<td bgcolor="grey">
+									<table border="0" align="center" width="100%">
+										<h:form>
+											<tr>
+												<td align="left">
+													<p style="color:#ffffff">Id:</p>
+												</td>
+												<td align="left">
+													<h:inputText size="20" id="id" value="#{Bean.id}">
+													</h:inputText>
+												</td>
+											</tr>
+											<tr>
+												<td align="left">
+													<p style="color:#ffffff">Password:</p>
+												</td>
+												<td align="left">
+													<h:inputSecret size="21" id="pass" value="#{Bean.pass}">
+													</h:inputSecret>
+												</td>
+											</tr>
+											<tr>
+												<td align="center">
+													<p style="color:#ffffff"></p>
+												</td>
+												<td align="center">
+													<h:commandButton value="Submit" action="#{Bean.Action}"/>
+												</td>
+												<td align="center">
+													<h:commandButton value="Reset" type="reset"/>
+												</td>
+											</tr>
+										</h:form>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</h:form>
+				</td>
+				<!-- Page specific content starts here -->
+					<td width="85%" valign="top" bgcolor="grey">
+						<p style="color:yellow; font-size:20pt" align="center">
+							<b><u>REGISTRATION FORM !!</u></b>
+						</p><br/>
+						<table bgcolor="white" cellpadding="12px" border="1" width="60%" align="center" style="height:120px">
+							<tr>
+								<td bgcolor="white">
+									<table border="0" width="100%" bgcolor="white" align="center" style="height:100px">
+										<h:form>
+											<tr>
+												<td>Name: </td>
+												<td>
+													<h:inputText value="#{RegisterForm.Name}" id="Name" required="true" requiredMessage="You must enter the name"/>
+													<h:message for="Name" style="color:red"/>
+												</td>
+											</tr>
+											<tr>
+												<td>Select Gender: </td>
+												<td>
+													<h:selectOneRadio value="#{RegisterForm.Gender}" id="Gender" required="true" requiredMessage="You must select the gender">
+													<h:message for="Gender" style="color:red"/>
+														<f:selectItem itemValue="m" itemLabel="Male"/>
+														<f:selectItem itemValue="f" itemLabel="Female"/>
+													</h:selectOneRadio>
+												</td>
+											</tr>
+											<tr>
+												<td>Date of Birth: </td>
+												<td>
+													<h:inputText id="DateOfBirth" value="#{RegisterForm.DateOfBirth}" converterMessage="Enter DOB in MM/DD/YY format" required="true" requiredMessage="You must enter the date">
+														<f:convertDateTime pattern="MM/dd/yy" type="date"/>
+													</h:inputText>
+													<h:message for="DateOfBirth" style="color:red"/>
+												</td>
+											</tr>
+											<tr>
+												<td>Address: </td>
+												<td><h:inputTextarea rows="3" value="#{RegisterForm.Address}" id="Address" required="true" requiredMessage="You must enter the address"/>
+													<h:message for="Address" style="color:red"/>
+												</td>
+											</tr>
+											<tr>
+												<td>Phone Number: </td>
+												<td><h:inputText value="#{RegisterForm.ContactNo}" id="ContactNo" required="true" requiredMessage="You must enter the contact no.">
+														<f:validateRegex pattern="\+[0-9]{2}-+[0-9]{3}-+[0-9]{8}"/>
+													</h:inputText>
+													<h:message for="ContactNo" style="color:red"/>
+												</td>
+											</tr>
+											<tr>
+												<td>E-mail Id: </td>
+												<td><h:inputText value="#{RegisterForm.EmailId}" id="EmailId" required="true" requiredMessage="You must enter the email id" validator="#{RegisterForm.validateEmailId}" validatorMessage="Invalid e-mail Id"/>
+													<h:message for="EmailId" style="color:red"/>
+												</td>
+											</tr>
+											<tr>
+												<td>Password: </td>
+												<td><h:inputSecret size="12" value="#{RegisterForm.Password}" id="Password" required="true" requiredMessage="You must enter the password" validatorMessage="Password mus be minimum 5 characters long" validator="#{RegisterForm.validatePassword}">
+														<f:validateLength minimum="5"/>	
+													</h:inputSecret>	
+												<h:message for="Password" style="color:red"/>
+												</td>
+											</tr>
+											<tr>
+												<td>Confirm Password: </td>
+												<td><h:inputSecret size="12" value="#{RegisterForm.ConfirmPassword}" id="ConfirmPassowrd" required="true" requiredMessage="You must confirm the password" validator="#{RegisterForm.validateConfirmPassword}"/>
+													<h:message for="ConfirmPassword" style="color:red"/>
+												</td>
+											</tr>
+											<tr>
+												<td align="right"><br/>
+													<h:commandButton value="Submit" action="#{Bean.Action}"/>
+												</td>
+												<td align="left"><br/>
+													<h:commandButton value="Reset" immediate="true" action="Registration"/>
+												</td>
+											</tr>
+										</h:form>
+									</table>
+								</td>			
+							</tr>
+						</table>	
+					</td>
+				<!-- Page specific content ends here -->	
+			</tr>
+		</table>
+	</h:body>
+</html>

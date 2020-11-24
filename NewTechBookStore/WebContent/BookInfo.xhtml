@@ -1,0 +1,235 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+          
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+	<h:head>
+		<style>
+			table, tr
+			{
+				border: 1px solid white;
+			}
+		</style>	
+	</h:head>
+	
+	<h:title>New Tech Book Store</h:title>
+	
+	<h:body>
+		<table border="0" bgcolor="purple" align="center" width="100%" style="position: relative; height: 100px">
+			<tr>
+				<td bgcolor="green" align="center">
+					<p style="font-size: 38pt; color: #ffffff; font-family: Arial Rounded MT Bold">NEW TECH BOOK STORE</p>
+				</td>
+				<td bgcolor="green" align="left" width="180">
+					<h:graphicImage url="/Images/books.jpg" width="180" height="160" align="right"/>
+				</td>
+			</tr>
+		</table>
+		<table bgcolor="white" border="1" align="center" width="100%" style="height:470px">
+			<tr>
+				<td bgcolor="grey" width="20%" valign="top" align="center">
+					<br/><br/>
+					<h:form>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="Home" value="Home"/>
+						<br/><br/>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="AboutUs" value="About Us"/>
+						<br/><br/>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="Registration" value="Registration"/>
+						<br/><br/>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="ContactUs" value="Contact Us"/>
+						<br/><br/>
+						<h:commandLink style="font-family: Verdana, Geneva, sana-serif; text-decoration: none; color: white;" action="BookInfo" value="Book Information"/>
+						<br/><br/><br/><br/>
+						
+						<table cellspacing="0.5" border="1" align="center" width="100%" bgcolor="FFFFFF">
+							<tr>
+								<td bgcolor="green">
+									<p style="font-size: 14pt; color: white">ACCOUNT LOGIN !!</p>
+								</td>
+							</tr>
+							<tr>
+								<td bgcolor="grey">
+									<table border="0" align="center" width="100%">
+										<h:form>
+											<tr>
+												<td align="left">
+													<p style="color:#ffffff">Id:</p>
+												</td>
+												<td align="left">
+													<h:inputText size="20" id="id" value="#{Bean.id}"/>
+												</td>
+											</tr>
+											<tr>
+												<td align="left">
+													<p style="color:#ffffff">Password:</p>
+												</td>
+												<td align="left">
+													<h:inputSecret size="21" id="pass" value="#{Bean.pass}"/>
+												</td>
+											</tr>
+											<tr>
+												<td align="center">
+													<p style="color:#ffffff"></p>
+												</td>
+												<td align="center">
+													<h:commandButton value="Submit" action="#{Bean.Action}"/>
+												</td>
+												<td align="center">
+													<h:commandButton value="Reset" type="reset"/>
+												</td>
+											</tr>
+										</h:form>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</h:form>
+				</td>
+				<td width="56%" valign="top" bgcolor="grey">
+				<!-- Page specific content starts here -->
+					<br/>
+					<p style="color:yellow; font-size:20pt" align="center">
+						<b>!! New Tech Book Store !!</b>
+					</p>
+						<br/><br/>
+						<table bgcolor="white" cellpadding="12px" border="1" width="60%" align="center" style="height:120px">
+							<tr>
+								<td bgcolor="white">
+									<table border="0" width="100%" bgcolor="white" align="center" style="height:280px">
+										<h:form>
+											<tr>
+												<td>Select Book Name</td>
+												<td>:</td>
+												<td align="center">
+													<h:selectOneMenu id="oBookName" value="#{BookInfo.BookName}" valueChangeListener="#{BookInfo.BookInfoAction}" onchange="this.form.submit()">
+														<f:selectItem itemValue="" itemLabel=""/>
+														<f:selectItem itemValue="I Wish I Could Say !!" itemLabel="I Wish I Could Say !!"/>
+														<f:selectItem itemValue="Three Men In A Boat !!" itemLabel="Three Men In A Boat !!"/>
+														<f:selectItem itemValue="Diary Of A Young Girl !!" itemLabel="Diary Of A Young Girl !!"/>
+														<f:selectItem itemValue="Chacha Choudhary !!" itemLabel="Chacha Choudhary !!"/>
+														<f:selectItem itemValue="The Invisible Man !!" itemLabel="The Invisible Man !!"/>
+														<f:selectItem itemValue="The Canterville Ghost !!" itemLabel="The Canterville Ghost !!"/>
+														<f:selectItem itemValue="The Story Of My Life !!" itemLabel="The Story Of My Life !!"/>
+														<f:selectItem itemValue="The Fault In Our Stars !!" itemLabel="The Fault In Our Stars !!"/>
+														<f:selectItem itemValue="The Hate You Give !!" itemLabel="The Hate You Give !!"/>
+														<f:selectItem itemValue="The Book Thief !!" itemLabel="The Book Thief !!"/>
+													</h:selectOneMenu>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<br/>
+													Book ID
+												</td>
+												<td>
+													<br/>
+													:
+												</td>
+												<td align="center">
+													<br/>
+													<h:outputText id="oBookID" value="#{BookInfo.BookID}"/>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<br/>
+													Category
+												</td>
+												<td>
+													<br/>
+													:
+												</td>
+												<td align="center">
+													<br/>
+													<h:outputText id="oBookCategory" value="#{BookInfo.BookCategory}"/>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<br/>
+													Author
+												</td>
+												<td>
+													<br/>
+													:
+												</td>
+												<td align="center">
+													<br/>
+													<h:outputText id="oBookAuthor" value="#{BookInfo.BookAuthor}"/>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<br/>
+													Book Price
+												</td>
+												<td>
+														<br/>
+													:
+												</td>
+												<td align="center">
+													<br/>
+													<h:outputText id="oBookPrice" value="#{BookInfo.BookPrice}"/>
+												</td>
+											</tr>
+										</h:form>
+									</table>
+								</td>
+							</tr>
+						</table>
+							<td width="40%" align="center" bgcolor="grey">
+								<p style="color:yellow; font-size:12pt">
+									<b><u>WHY BUY FROM US ??</u></b>
+								</p>
+								<p style="color:white; font-size:7pt">
+									1. Over 4.5 million books.
+								</p>
+								<p style="color:white; font-size:7pt">
+									2. Lowest possible prices.						
+								</p>
+								<p style="color:white; font-size:7pt">
+									3. Books for all age groups.
+								</p>
+								<p style="color:white; font-size:7pt">
+									4. Order a book before it hits the market.
+								</p>
+								<p style="color:white; font-size:7pt">
+									5. Promotion schemes.
+								</p>
+								<hr/>
+								<p style="color:yellow; font-size:12pt">
+									<b><u>JOIN THE BOOK CLUB !!</u></b>
+								</p>
+								<p style="color:white; font-size:7pt">
+									1. Get 10% discount.
+								</p>
+								<p style="color:white; font-size:7pt">
+									2. Get books free worth $20.
+								</p>
+								<hr/>
+								<p style="color:yellow; font-size:12pt">
+									<b><u>CUSTOMER SERVICE..</u></b>
+								</p>
+								<p style="color:white; font-size:7pt">
+									1. All orders are executed in the least possible time.
+								</p>
+								<p style="color:white; font-size:7pt">
+									2. Books are supplied all over the globe.
+								</p>
+								<p style="color:white; font-size:7pt">
+									3. Books are thoroughly checked before dispatch.
+								</p>
+								<p style="color:white; font-size:7pt">
+									4. Multiple modes of payment are available.
+								</p>
+							</td>
+				<!-- Page specific content ends here -->
+				</td>
+			</tr>
+		</table>
+	</h:body>
+</html>

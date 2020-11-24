@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+      
+	<h:head>
+		<h:title>CARMEL TRANSPORTRS</h:title>
+	</h:head>
+
+	<h:body>
+		<table border="0" bgcolor="#808080" align="center" width="88%" style="height:100px">
+			<tr>
+				<td bgcolor="#000080" align="center" style="color:white">
+					<h2 align="center">CARMEL TRANSPORTRS LTD.</h2>
+				</td>
+				<td bgcolor="666699" align="left" width="180">
+					<h:graphicImage url="/Images/HondaCivic.jpg" width="320" height="160" align="right"/>
+				</td>
+			</tr>
+		</table>
+		<table bgcolor="white" border="1" align="center" width="88%" style="height:400px">
+			<tr>
+				<td width="85%" valign="top" bgcolor="white" style="color:darkblue">
+					<br/>
+					<h1 align="center">Fare Details !!</h1>
+					<br/>
+						<table border="0" width="50%" align="center">
+							<h:form>
+								<tr>
+									<td align="center">
+										<b>Destination City</b>
+									</td>
+									<td><br/>
+										<b>:</b>
+									</td>
+									<td align="center">
+										<h:selectOneMenu id="CityName" value="#{FareDetailsBean.CityName}" valueChangeListener="#{FareDetailsBean.FareDetailsAction}" onchange="this.form.submit()">
+											<f:selectItem itemValue="Calistoga" itemLabel="Calistoga"/>
+											<f:selectItem itemValue="Dixon" itemLabel="Dixon"/>
+											<f:selectItem itemValue="Durham" itemLabel="Durham"/>
+											<f:selectItem itemValue="Felton" itemLabel="Felton"/>
+											<f:selectItem itemValue="Gustine" itemLabel="Gustine"/>
+											<f:selectItem itemValue="Lemoore" itemLabel="Lemoore"/>
+											<f:selectItem itemValue="Los Angeles" itemLabel="Los Angeles"/>
+											<f:selectItem itemValue="Naveda City" itemLabel="Naveda City"/>
+										</h:selectOneMenu>
+									</td>
+								</tr>
+								<tr>
+									<td align="center"><br/>
+										<b>Transportation Cost</b>
+									</td>
+									<td><br/>
+										<b>:</b>
+									</td>
+									<td align="center"><br/>
+										<h:outputText id="TransportationCost" value="#{FareDetailsBean.TransportationCost}"/>
+									</td>
+								</tr>
+								<tr>
+									<td align="center"><br/>
+										<b>Service Charge</b>
+									</td>
+									<td><br/>
+										<b>:</b>
+									</td>
+									<td align="center"><br/>
+										<h:outputText id="ServiceCharge" value="#{FareDetailsBean.ServiceCharge}"/>
+									</td>
+								</tr>
+								<tr>
+									<td align="center"><br/>
+										<b>Insurance Charge</b>
+									</td>
+									<td><br/>
+										<b>:</b>
+									</td>
+									<td align="center"><br/>
+										<h:outputText id="InsuranceCharge" value="#{FareDetailsBean.InsuranceCharge}"/>
+									</td>
+								</tr>
+							</h:form>				
+						</table>
+				</td>
+			</tr>
+		</table>
+	</h:body>
+</html>
