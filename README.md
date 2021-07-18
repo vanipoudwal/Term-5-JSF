@@ -1,2 +1,2 @@
 # Term-5-JSF
-This repository is used to write JSF Code.
+This Repository Is Used To Write Java-Server Faces Code.
